@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "credit-risk-prediction"
+version = "0.1.0"
+description = "Explainable credit-risk prediction decision-support prototype"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi==0.115.12",
+    "numpy==2.2.4",
+    "pandas==2.2.3",
+    "pydantic==2.11.3",
+    "requests==2.32.4",
+    "scikit-learn==1.6.1",
+    "streamlit==1.44.1",
+    "uvicorn==0.34.0",
+]
+
+[project.optional-dependencies]
+torch = ["torch==2.10.0"]
+explainability = ["langchain==1.0.7", "transformers==5.10.0", "torch==2.10.0"]
+tracking = ["mlflow==3.17.2"]
+dev = ["httpx==0.28.1", "pytest==8.3.5"]
+
+[tool.setuptools.packages.find]
+include = ["credit_risk*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
