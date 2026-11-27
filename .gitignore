@@ -1,0 +1,38 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+
+# --- Secrets / environment ---
+.env
+
+# --- Data: raw financial data is NEVER committed (privacy + size) ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- Model artifacts & experiment tracking ---
+models/*
+!models/.gitkeep
+mlruns/
+*.pkl
+*.pt
+
+# --- Local databases ---
+*.db
+*.sqlite3
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
